@@ -15,6 +15,8 @@ class Kohana_Sitemap
 	/**
 	 * Setup the XML document
 	 */
+        
+        
 	public function __construct()
 	{
 		// XML document
@@ -29,6 +31,24 @@ class Kohana_Sitemap
 		// Append to XML document
 		$this->_xml->appendChild($this->_root);
 	}
+        
+        /**
+         * This can be called within controllers to record the current page to be added 
+         * to the sitemap that will be generated
+         * @param Request $current_request_to_record i.e $this->request in a controller
+         */
+        public static function record(Request $current_request_to_record){
+            $full_url = URL::site($current_request_to_record->detect_uri(), TRUE, FALSE);
+            $cache = Cache::instance();
+            $saved_sitemap = $cache->get('saved_sitemap');
+            if(!$saved_sitemap){
+                $saved_sitemap = array();
+            }
+            if(!in_array($full_url, $saved_sitemap)){
+                $saved_sitemap[sizeof($saved_sitemap)] = $full_url;
+                $cache->set('saved_sitemap', $saved_sitemap, PHP_INT_MAX);
+            }
+        }
 	
 	/**
 	 * @param Sitemap_URL $object 
