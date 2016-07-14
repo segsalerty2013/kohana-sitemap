@@ -24,7 +24,7 @@ Any Controller you want to capture its 'actions' url to be added to the sitemap
 Add the following to the constructor like this:
 
     parent::__construct($request, $response);
-    *Sitemap::record($this->request);*
+    Sitemap::record($this->request);
     
     
 
