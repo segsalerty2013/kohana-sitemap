@@ -1,6 +1,8 @@
 Sitemap Module
 ==============
 
+
+
 This module allows you to create XML sitemaps. This module supports the current types of sitemap:
 
 - [Standard](http://www.sitemaps.org/protocol.php)
@@ -13,7 +15,17 @@ This module allows you to create XML sitemaps. This module supports the current 
 Installation
 ------------
 
-    git submodule add git://github.com/ThePixelDeveloper/kohana-sitemap.git modules/sitemap
+    git git submodule add https://github.com/segsalerty2013/kohana-sitemap.git modules/sitemap
+
+How to Use
+------------
+You need 'cache' and 'sitemap' modules active
+Any Controller you want to capture its 'actions' url to be added to the sitemap
+Add the following to the constructor like this:
+    parent::__construct($request, $response);
+    *Sitemap::record($this->request);*
+    
+    
 
 Keeping up to date
 -------------------
@@ -29,12 +41,13 @@ repository.
 Bugs
 ----
 
-Please file all bugs, patches and feature requests to the [Sitemap Issue Tracker](http://github.com/ThePixelDeveloper/kohana-sitemap/issues)
+Please file all bugs, patches and feature requests to the [Sitemap Issue Tracker](https://github.com/segsalerty2013/kohana-sitemap/issues)
 
 ISC License
 ----
 
 Copyright (c) 2010 - 2012, Mathew Davies <thepixeldeveloper@googlemail.com>
+Contribution (c) 2016, Mustafa Segun <segsalerty@yahoo.com>
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
