@@ -26,7 +26,7 @@ Add the following to the constructor like this:
     Sitemap::record($this->request);
 Add your domain/host to trusted hosts here:
     system\config\url.php
-    
+  
     
 
 Keeping up to date
