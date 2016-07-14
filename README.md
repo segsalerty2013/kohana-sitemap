@@ -22,6 +22,7 @@ How to Use
 You need 'cache' and 'sitemap' modules active
 Any Controller you want to capture its 'actions' url to be added to the sitemap
 Add the following to the constructor like this:
+
     parent::__construct($request, $response);
     *Sitemap::record($this->request);*
     
@@ -47,6 +48,7 @@ ISC License
 ----
 
 Copyright (c) 2010 - 2012, Mathew Davies <thepixeldeveloper@googlemail.com>
+
 Contribution (c) 2016, Mustafa Segun <segsalerty@yahoo.com>
 
 Permission to use, copy, modify, and/or distribute this software for any
