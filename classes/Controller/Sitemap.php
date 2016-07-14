@@ -13,7 +13,7 @@ class Controller_Sitemap extends Controller{
         $now = new DateTime();
         if(is_array($sites_array)){
             foreach ($sites_array as $value) {
-                $url = new Sitemap_URL;
+                $url = new Sitemap_URL();
                 $url->set_loc($value)
                     ->set_last_mod($now->getTimestamp())
                     ->set_change_frequency('daily')

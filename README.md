@@ -28,7 +28,6 @@ Add your domain/host to trusted hosts here:
     system\config\url.php
     
     
-    
 
 Keeping up to date
 -------------------
